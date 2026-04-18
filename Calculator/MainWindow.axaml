@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        x:Class="Calculator.MainWindow"
+        
+        Title="Calculator"
+        
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="150"
+        Width="500" Height="150"
+        CanResize="False">
+    
+    <Window.Styles>
+        <Style Selector="TextBox">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Button.eq">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Styles>
+        
+    <Grid ColumnDefinitions="*, 2*"
+          RowDefinitions="*, *">
+                <TextBlock x:Name="Result"
+                           Grid.Row="0" Grid.Column="0"/>
+                
+                <StackPanel Orientation="Horizontal"
+                            Grid.Row="0" Grid.Column="1">
+                    <TextBox x:Name="Number1"/>
+                    <TextBox x:Name="Symbol"/>
+                    <TextBox x:Name="Number2"/>
+                </StackPanel>
+                
+                <Button x:Name="Button_Calc"
+                        Content=" = "
+                        Classes="eq"
+                        Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                        Click="Button_Calc_OnClick"/>
+        </Grid>
+</Window>

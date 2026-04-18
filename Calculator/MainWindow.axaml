@@ -11,13 +11,7 @@
         CanResize="False">
     
     <Window.Styles>
-        <Style Selector="TextBox">
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-        </Style>
-        <Style Selector="Button.eq">
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-        </Style>
+        <StyleInclude Source="Styles.axaml"/>
     </Window.Styles>
         
     <Grid ColumnDefinitions="*, 2*"

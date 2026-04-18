@@ -2,22 +2,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="using:Calculator"
         x:Class="Calculator.MainWindow"
+        x:DataType="local:MainWindow"
         
         Title="Calculator"
         
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="150"
         Width="500" Height="150"
-        CanResize="False">
+        CanResize="False"
+        >
     
     <Window.Styles>
         <StyleInclude Source="Styles.axaml"/>
     </Window.Styles>
         
     <Grid ColumnDefinitions="*, 2*"
-          RowDefinitions="*, *">
-                <TextBlock x:Name="Result"
-                           Grid.Row="0" Grid.Column="0"/>
+          RowDefinitions="*, *, 15">
+                <TextBlock x:Name="History"
+                         Grid.Row="0" Grid.Column="0"/>
                 
                 <StackPanel Orientation="Horizontal"
                             Grid.Row="0" Grid.Column="1">
@@ -30,6 +33,10 @@
                         Content=" = "
                         Classes="eq"
                         Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
-                        Click="Button_Calc_OnClick"/>
+                        Click="Button_Calc_OnClick"
+                        HotKey="Ctrl+Enter"/>
+                
+                <TextBlock x:Name="StatusBar"
+                           Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"/>
         </Grid>
 </Window>
